@@ -56,7 +56,7 @@ At level of significance 0.05, we reject the null hypothesis and conclude that t
 
 After taking the log transformation, the histogram seems to approach a normal distribution. Although the boxplot still shows quite a few outliers, high glucose levels are common in the early phases of stroke (Lindsberg & Roine, 2004) and we are using it as a predictor for stroke, so we will leave the outliers in. 
 
-## #3.7 Summary statistics for bmi
+### 3.7 Summary statistics for bmi
 The histogram is right-skewed hence we will apply a (log) transformation to deal with skewed data. However the boxplot shows 3 extreme outliers which we will remove for bmi>65. After removing the 3 extreme outliers, we check for normality using the Shapiro-Wilk test.
 At level of significance 0.05, we reject the null hypothesis and conclude that the data does not follow normal distribution. Hence, we will perform a log transformation.
 
@@ -96,7 +96,7 @@ H1: Some association exists between stroke and heart_disease
 The chi-square test returns an extremely small p-value which is smaller than the significance level of 0.05. Thus we reject the null hypothesis and conclude that some association exists between stroke and heart_disease.
 
 #### 4.2.4 Relation between stroke and avg_glucose_level
-![Glucose Test](./img/glucose_box.png)
+![Glucose Box](./img/glucose_box.png)
 From the boxplot above, we observe that the median average glucose level for stroke patients is higher than non-stroke patients. We proceed to test if the mean average glucose level for both stroke and non-stroke groups are equal. 
 ![Glucose Test](./img/glucose_test.png)
 The ANOVA test returns an extremely small p-value which is smaller than the significance level of 0.05. Thus we reject the null hypothesis and conclude that the mean average glucose level for stroke patients and non-stroke patients are not equal. We can then infer that having higher average glucose level increases the odds of getting a stroke.
@@ -110,13 +110,18 @@ The chi-square test returns an extremely small p-value which is smaller than the
 
 ### 4.3 Logistic Regression
 First we perform oversampling to balance out our dataset and have the equal number of observations for stroke and non-stroke patients. Next we split our data into training and test sets. Then we perform logistic regression using age, hypertension, heart disease and average glucose level as predictor variables to develop a model to predict stroke. 
+
 ![logreg1](./img/logreg1.png)
+
 From the R output above, we can observe that all 4 predictor variables are significant as they have p-values below the significance level of 0.05.
+
 ![logreg2](./img/logreg2.png)
 
 #### 4.3.1 Prediction
 In order to test how accurate our model is, we perform predictions and compare the results with the test set data. We use a threshold value of 0.5 for our predictions and generate a confusion matrix. A confusion matrix is a table used to describe the performance of a classification model on a set of test data for which the true outcomes are known. It compares the actual outcomes in the test data set to the predicted outcomes. 
+
 ![cmatrix](./img/cmatrix.png)
+
 Our model is 76.01% accurate at predicting stroke using age, hypertension, heart disease and average glucose level as predictor variables. Thus we conclude that these variables are significant for predicting stroke in humans.
 
 ### 5. Conclusion
