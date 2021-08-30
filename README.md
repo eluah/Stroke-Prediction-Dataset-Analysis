@@ -51,8 +51,15 @@ There are 3017 observations of no hypertension history and 408 observations of h
 There are 3219 observations without heart disease history and 206 observations with heart disease history.
 
 ### 3.6 Summary statistics for avg_glucose_level
+
+![glu1](./img/glu1.png)
+![glu2](./img/glu2.png)
+
 The histogram seems to vary from a normal distribution, so we perform the Shapiro-Wilk test to check for normality. 
 At level of significance 0.05, we reject the null hypothesis and conclude that the data does not follow normal distribution. Hence, we will perform a log transformation.
+
+![glu3](./img/glu3.png)
+![glu4](./img/glu4.png)
 
 After taking the log transformation, the histogram seems to approach a normal distribution. Although the boxplot still shows quite a few outliers, high glucose levels are common in the early phases of stroke (Lindsberg & Roine, 2004) and we are using it as a predictor for stroke, so we will leave the outliers in. 
 
