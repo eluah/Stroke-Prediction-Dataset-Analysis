@@ -70,7 +70,8 @@ Based on the above analysis, the dataset is reduced to 3422 observations.
 
 ## 4. Statistical Analysis
 ### 4.1 Visualize the correlation between the response variable, stroke and each predictor variables
-!(./img/corrplot.png)
+![Correlation Matrix](./img/corrplot.png)
+
 The correlation matrix highlights how correlated the variables are in the dataset. From the corrplot, one can see that stroke is positively correlated to age, hypertension, heart_disease and avg_glucose_level. 
 We will perform some statistical tests to further verify our observations which is illustrated in the next section.
 
