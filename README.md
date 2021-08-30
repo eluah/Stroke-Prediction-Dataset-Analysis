@@ -70,42 +70,58 @@ Based on the above analysis, the dataset is reduced to 3422 observations.
 
 ## 4. Statistical Analysis
 ### 4.1 Visualize the correlation between the response variable, stroke and each predictor variables
+
 ![Correlation Matrix](./img/corrplot.png)
+
 The correlation matrix highlights how correlated the variables are in the dataset. From the corrplot, one can see that stroke is positively correlated to age, hypertension, heart_disease and avg_glucose_level. 
 We will perform some statistical tests to further verify our observations which is illustrated in the next section.
 
 ### 4.2 Statistical Tests
 #### 4.2.1 Relation between stroke and age
+
 ![Age Box Plot](./img/age_box.png)
+
 From the boxplot above, we observe that the median age for stroke patients is much higher than non-stroke patients. We proceed to test if the mean age for both stroke and non-stroke groups are equal. 
+
 ![Age Box Plot](./img/age_test.png)
+
 The ANOVA test returns an extremely small p-value which is smaller than the significance level of 0.05. Thus we reject the null hypothesis and conclude that the mean age for stroke patients and non-stroke patients are not equal. We can then conclude that the older you get, the higher the chance of getting a stroke.
 
 #### 4.2.2 Relation between stroke and hypertension
 We first create a table with the summary counts then perform a chi-square test to test for association between stroke and hypertension.
 H0: There is no association between stroke and hypertension
 H1: Some association exists between stroke and hypertension
+
 ![Hypertension Test](./img/hypertension_test.png)
+
 The chi-square test returns an extremely small p-value which is smaller than the significance level of 0.05. Thus we reject the null hypothesis and conclude that some association exists between stroke and hypertension.
 
 #### 4.2.3 Relation between stroke and heart_disease
 We first create a table with the summary counts then perform a chi-square test to test for association between stroke and heart_disease.
 H0: There is no association between stroke and heart_disease
 H1: Some association exists between stroke and heart_disease
+
 ![Heart Test](./img/heart_test.png)
+
 The chi-square test returns an extremely small p-value which is smaller than the significance level of 0.05. Thus we reject the null hypothesis and conclude that some association exists between stroke and heart_disease.
 
 #### 4.2.4 Relation between stroke and avg_glucose_level
+
 ![Glucose Box](./img/glucose_box.png)
+
 From the boxplot above, we observe that the median average glucose level for stroke patients is higher than non-stroke patients. We proceed to test if the mean average glucose level for both stroke and non-stroke groups are equal. 
+
 ![Glucose Test](./img/glucose_test.png)
+
 The ANOVA test returns an extremely small p-value which is smaller than the significance level of 0.05. Thus we reject the null hypothesis and conclude that the mean average glucose level for stroke patients and non-stroke patients are not equal. We can then infer that having higher average glucose level increases the odds of getting a stroke.
 
 #### 4.2.5 Relationship between hypertension and heart_disease
 We first create a table with the summary counts then perform a chi-square test to test for association between stroke and heart_disease.
 H0: There is no association between hypertension and heart_disease
 H1: Some association exists between hypertension and heart_disease
+
 ![Hypertension-Heart Test](./img/hypertension_heart_test.png)
+
 The chi-square test returns an extremely small p-value which is smaller than the significance level of 0.05. Thus we reject the null hypothesis and conclude that some association exists between hypertension and heart_disease.
 
 ### 4.3 Logistic Regression
@@ -128,9 +144,10 @@ Our model is 76.01% accurate at predicting stroke using age, hypertension, heart
 Stroke is one of the main causes of death. In order to prevent a stroke from happening, it is important to understand the chances of having a stroke based on the health issues that a person has. In this report, we attempted to verify common knowledge about stroke factors. 
 
 From our analysis we conclude that:
-●	Stroke is positively correlated to age, hypertension, heart disease, average glucose level
-●	Age is highly correlated to hypertension and heart disease
-●	Age is the most significant factor influencing the chances of getting a stroke
-●	Hypertension and heart disease are linked to each other
+
+-	Stroke is positively correlated to age, hypertension, heart disease, average glucose level
+-	Age is highly correlated to hypertension and heart disease
+-	Age is the most significant factor influencing the chances of getting a stroke
+-	Hypertension and heart disease are linked to each other
 
 In addition, gender and smoking status did not seem to affect the chances of getting a stroke significantly which is interesting to note. It should be mentioned that since oversampling used to balance the dataset, it might lead to overfitting. However, since the accuracy of the model is relatively high, it should not be a significant issue.
