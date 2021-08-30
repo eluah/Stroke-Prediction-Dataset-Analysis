@@ -71,52 +71,52 @@ Based on the above analysis, the dataset is reduced to 3422 observations.
 ## 4. Statistical Analysis
 ### 4.1 Visualize the correlation between the response variable, stroke and each predictor variables
 ![Correlation Matrix](./img/corrplot.png)
-
 The correlation matrix highlights how correlated the variables are in the dataset. From the corrplot, one can see that stroke is positively correlated to age, hypertension, heart_disease and avg_glucose_level. 
 We will perform some statistical tests to further verify our observations which is illustrated in the next section.
 
 ### 4.2 Statistical Tests
 #### 4.2.1 Relation between stroke and age
-
+![Age Box Plot](./img/age_box.png)
 From the boxplot above, we observe that the median age for stroke patients is much higher than non-stroke patients. We proceed to test if the mean age for both stroke and non-stroke groups are equal. 
-
+![Age Box Plot](./img/age_test.png)
 The ANOVA test returns an extremely small p-value which is smaller than the significance level of 0.05. Thus we reject the null hypothesis and conclude that the mean age for stroke patients and non-stroke patients are not equal. We can then conclude that the older you get, the higher the chance of getting a stroke.
 
 #### 4.2.2 Relation between stroke and hypertension
 We first create a table with the summary counts then perform a chi-square test to test for association between stroke and hypertension.
 H0: There is no association between stroke and hypertension
 H1: Some association exists between stroke and hypertension
-
+![Hypertension Test](./img/hypertension_test.png)
 The chi-square test returns an extremely small p-value which is smaller than the significance level of 0.05. Thus we reject the null hypothesis and conclude that some association exists between stroke and hypertension.
 
 #### 4.2.3 Relation between stroke and heart_disease
 We first create a table with the summary counts then perform a chi-square test to test for association between stroke and heart_disease.
 H0: There is no association between stroke and heart_disease
 H1: Some association exists between stroke and heart_disease
-
+![Heart Test](./img/heart_test.png)
 The chi-square test returns an extremely small p-value which is smaller than the significance level of 0.05. Thus we reject the null hypothesis and conclude that some association exists between stroke and heart_disease.
 
 #### 4.2.4 Relation between stroke and avg_glucose_level
-
+![Glucose Test](./img/glucose_box.png)
 From the boxplot above, we observe that the median average glucose level for stroke patients is higher than non-stroke patients. We proceed to test if the mean average glucose level for both stroke and non-stroke groups are equal. 
-
+![Glucose Test](./img/glucose_test.png)
 The ANOVA test returns an extremely small p-value which is smaller than the significance level of 0.05. Thus we reject the null hypothesis and conclude that the mean average glucose level for stroke patients and non-stroke patients are not equal. We can then infer that having higher average glucose level increases the odds of getting a stroke.
 
 #### 4.2.5 Relationship between hypertension and heart_disease
 We first create a table with the summary counts then perform a chi-square test to test for association between stroke and heart_disease.
 H0: There is no association between hypertension and heart_disease
 H1: Some association exists between hypertension and heart_disease
-
+![Hypertension-Heart Test](./img/hypertension_heart_test.png)
 The chi-square test returns an extremely small p-value which is smaller than the significance level of 0.05. Thus we reject the null hypothesis and conclude that some association exists between hypertension and heart_disease.
 
 ### 4.3 Logistic Regression
 First we perform oversampling to balance out our dataset and have the equal number of observations for stroke and non-stroke patients. Next we split our data into training and test sets. Then we perform logistic regression using age, hypertension, heart disease and average glucose level as predictor variables to develop a model to predict stroke. 
-
+![logreg1](./img/logreg1.png)
 From the R output above, we can observe that all 4 predictor variables are significant as they have p-values below the significance level of 0.05.
+![logreg2](./img/logreg2.png)
 
 #### 4.3.1 Prediction
 In order to test how accurate our model is, we perform predictions and compare the results with the test set data. We use a threshold value of 0.5 for our predictions and generate a confusion matrix. A confusion matrix is a table used to describe the performance of a classification model on a set of test data for which the true outcomes are known. It compares the actual outcomes in the test data set to the predicted outcomes. 
-
+![cmatrix](./img/cmatrix.png)
 Our model is 76.01% accurate at predicting stroke using age, hypertension, heart disease and average glucose level as predictor variables. Thus we conclude that these variables are significant for predicting stroke in humans.
 
 ### 5. Conclusion
