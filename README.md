@@ -35,14 +35,16 @@ After the preliminary cleaning, we are left with 3425 observations (patients)  w
 In this section, we investigate each variable in detail to find possible outliers and possibly apply data transformations to fix skewed data. 
 
 ### 3.1 Summary statistics for the main variable of interest, stroke
- We observe that the variable stroke is highly skewed towards patients with no stroke 
-history. There are 3245 observations of no stroke history and 180 observations of stroke history. This data bias will be addressed later in the report through oversampling.
+We observe that the variable stroke is highly skewed towards patients with no stroke history. There are 3245 observations of no stroke history and 180 observations of stroke history. This data bias will be addressed later in the report through oversampling.
 
 ### 3.2 Summary statistics for gender
 There are 1339 observations of males and 2086 observations of females. The difference in observations is not huge so we will not perform any data manipulations here.
 
 ### 3.3 Summary statistics for age
-The histogram seems to follow a normal distribution so no transformation is needed. The boxplot does not show any outliers. 
+
+![age_hist](./img/age_hist.png)
+
+The histogram seems to follow a normal distribution so no transformation is needed.
 
 ### 3.4 Summary statistics for hypertension
 There are 3017 observations of no hypertension history and 408 observations of hypertension history. 
@@ -64,8 +66,15 @@ At level of significance 0.05, we reject the null hypothesis and conclude that t
 After taking the log transformation, the histogram seems to approach a normal distribution. Although the boxplot still shows quite a few outliers, high glucose levels are common in the early phases of stroke (Lindsberg & Roine, 2004) and we are using it as a predictor for stroke, so we will leave the outliers in. 
 
 ### 3.7 Summary statistics for bmi
+
+![bmi1](./img/bmi1.png)
+![bmi2](./img/bmi2.png)
+
 The histogram is right-skewed hence we will apply a (log) transformation to deal with skewed data. However the boxplot shows 3 extreme outliers which we will remove for bmi>65. After removing the 3 extreme outliers, we check for normality using the Shapiro-Wilk test.
 At level of significance 0.05, we reject the null hypothesis and conclude that the data does not follow normal distribution. Hence, we will perform a log transformation.
+
+![bmi3](./img/bmi3.png)
+![bmi4](./img/bmi4.png)
 
 After performing log transformation, the data now follows a normal distribution and is not skewed. The boxplot has quite a few outliers but since patients with extreme BMI values could lead to having a higher chance of stroke, we leave them in our analysis.
 
