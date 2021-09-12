@@ -164,3 +164,18 @@ From the analysis we conclude that:
 -	Hypertension and heart disease are linked to each other
 
 In addition, gender and smoking status did not seem to affect the chances of getting a stroke significantly which is interesting to note. It should be mentioned that since oversampling used to balance the dataset, it might lead to overfitting. However, since the accuracy of the model is relatively high, it should not be a significant issue.
+
+### 6. References
+Better Health Channel. (2013, July 31). Stroke risk factors and prevention.
+https://www.betterhealth.vic.gov.au/health/ConditionsAndTreatments/stroke-risk-f
+actors-and-prevention
+
+Centers for Disease Control and Prevention. (2020, August 28). Stroke Signs and
+Symptoms. https://www.cdc.gov/stroke/signs_symptoms.htm
+
+Lindsberg, P. J., & Roine, R. O. (2004). Hyperglycemia in Acute Stroke. Stroke, Vol
+35(No. 2), 363–364.
+https://www.ahajournals.org/doi/full/10.1161/01.str.0000115297.92132.84
+
+World Health Organization. (2020, December 9). The top 10 causes of death.
+https://www.who.int/news-room/fact-sheets/detail/the-top-10-causes-of-death
